@@ -5,7 +5,7 @@ import java.util.*;
 public class objKaryawanFix {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        final int MAX_KARYAWAN = 99; // Maksimum jumlah karyawan yang bisa disimpan
+        final int MAX_KARYAWAN = 100; // Maksimum jumlah karyawan yang bisa disimpan
         clskaryawanFix[] listKaryawan = new clskaryawanFix[MAX_KARYAWAN];
 
         // Memanggil method tambahKaryawan dari kelas clskaryawanFix
