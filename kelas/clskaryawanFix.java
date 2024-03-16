@@ -49,31 +49,32 @@ public class clskaryawanFix {
             boolean cekGender = false;
             while (!cekGender) {
                 System.out.print("Masukkan Jenis Kelamin Karyawan ('L' untuk Laki - Laki, 'P' untuk Perempuan ): ");
-                gender = input.nextLine().toLowerCase();
+                gender = input.next().toLowerCase();
                 if (gender.equals("l") || gender.equals("p")) {
-                cekGender = true;
-                switch (gender) {
-                    case "l":
-                        gender = "Laki - Laki";
-                        break;
-                    case "p":
-                        gender = "Perempuan";
-                        break;
-                    default:
-                        // Penanganan input yang tidak valid
-                        System.out.println("Jenis Kelamin karyawan tidak valid. Harap masukkan 'L' atau 'P'.");
-                        break;
-                     }
-                 } else {
-                // Menampilkan pesan error karena input tidak valid
-                System.out.println("Jenis Kelamin karyawan tidak valid. Harap masukkan 'L' atau 'P'.");
+                    cekGender = true;
+                    switch (gender) {
+                        case "l":
+                            gender = "Laki - Laki";
+                            break;
+                        case "p":
+                            gender = "Perempuan";
+                            break;
+                        default:
+                            // Penanganan input yang tidak valid
+                            System.out.println("Jenis Kelamin karyawan tidak valid. Harap masukkan 'L' atau 'P'.");
+                            break;
+                    }
+
+                } else {
+                    System.out.println("Jenis Kelamin karyawan tidak valid. Harap masukkan 'L' atau 'P'.");
                 }
             }
+
             String employeeCategory = "";
             boolean cekKategori = false;
             while (!cekKategori) {
                 System.out.print("Masukkan Kategori Karyawan ('travel' untuk Supir Travel, 'rent' untuk Supir Rental, 'admin' untuk staff admin ): ");
-                employeeCategory = input.nextLine().toLowerCase();
+                employeeCategory = input.next().toLowerCase();
                 if (employeeCategory.equals("travel") || employeeCategory.equals("rent") || employeeCategory.equals("admin")) {
                     cekKategori = true;
                 } else {
@@ -86,7 +87,8 @@ public class clskaryawanFix {
             index++;
 
             System.out.print("Anda Menambahkan data lagi ? (ya/tidak): ");
-            x = input.nextLine().toLowerCase();
+            x = input.next().toLowerCase();
+                input.nextLine();
         } while (x.contains("y"));
         return index; // Mengembalikan jumlah karyawan yang telah ditambahkan
     }
