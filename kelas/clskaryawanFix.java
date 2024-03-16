@@ -2,9 +2,10 @@ package kelas;
 import java.util.Scanner;
 
 public class clskaryawanFix {
-    private String name, address,id,email, phone, gender, category;
+    private String name, address,id,email, gender, category;
+    Long phone;
 
-    public clskaryawanFix(String name, String address,String id, String email, String phone, String gender, String category) {
+    public clskaryawanFix(String name, String address,String id, String email, Long phone, String gender, String category) {
         this.name = name;
         this.address = address;
         this.gender = gender;
@@ -42,11 +43,33 @@ public class clskaryawanFix {
             String email = input.nextLine();
 
             System.out.print("Masukkan No. HP Karyawan\t: ");
-            String phoneNumber = input.nextLine();
+            long phoneNumber = input.nextLong();
 
             System.out.print("Masukkan Jenis Kelamin Karyawan\t: ");
-            String gender = input.nextLine();
-
+            String gender = "";
+            boolean cekGender = false;
+            while (!cekGender) {
+                System.out.print("Masukkan Jenis Kelamin Karyawan (L untuk Laki - Laki \n P untuk Perempuan ): ");
+                gender = input.nextLine().toLowerCase();
+            if (gender.equals("l") || gender.equals("p")) {
+                cekGender = true;
+                switch (gender) {
+                    case "l":
+                        gender = "Laki - Laki";
+                        break;
+                    case "p":
+                        gender = "Perempuan";
+                        break;
+                    default:
+                        // Penanganan input yang tidak valid
+                        System.out.println("Jenis Kelamin karyawan tidak valid. Harap masukkan 'L' atau 'P'.");
+                        break;
+                }
+            } else {
+                // Menampilkan pesan error karena input tidak valid
+                System.out.println("Jenis Kelamin karyawan tidak valid. Harap masukkan 'L' atau 'P'.");
+                }
+            }
             String employeeCategory = "";
             boolean cekKategori = false;
             while (!cekKategori) {
