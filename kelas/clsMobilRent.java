@@ -28,7 +28,7 @@ public class clsMobilRent {
             System.out.print("Masukkan No Plat Mobil\t\t: ");
             String noPlat = input.nextLine();
 
-            System.out.print("Masukkan merk Mobil\t\t: ");
+            System.out.print("Masukkan merk Mobil\t: ");
             String merkMobil = input.nextLine();
 
             System.out.print("Masukkan warna Mobil\t\t: ");
